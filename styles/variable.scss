@@ -1,0 +1,32 @@
+// -------------------------------
+// 変数設定
+// -------------------------------
+
+// ---------- mode ----------
+$pc: 1400px;
+$sp: 768px;
+
+// ---------- media ----------
+@mixin pc {
+  @media screen and (max-width: $pc) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
+      @content;
+  }
+}
+
+// ---------- font ----------
+%caveat {
+  font-family: 'Caveat';
+}
+
+// ---------- color ----------
+$header-color: rgba(227, 247, 187, 0.8);
+$bg-color: #c9edc6;
+$h2-color: #829c6f;
+$link-color: #000000, #34d6e6;
+$logo: #f5d888;

@@ -1,0 +1,111 @@
+@use "./variable.scss" as v;
+
+// -------------------------------
+// PageTitle設定
+// -------------------------------
+
+.pagetitle {
+  @extend %caveat !optional;
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 45px;
+  position: relative;
+
+  // ---------- sp設定 ----------
+  @include v.sp {
+    font-size: 12px;
+    padding-top: calc(45px / 2);
+  }
+  // ---------- sp設定end ----------
+
+  &::before {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 4px;
+    background-color: v.$bg-color;
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 80px);
+  }
+}
+
+
+// -------------------------------
+// section設定
+// -------------------------------
+
+// ---------- section設定 ----------
+.section {
+  width: 100%;
+  margin-top: 100px;
+
+  // ---------- sp設定 ----------
+  @include v.sp {
+    margin-top: 50px;
+  }
+  // ---------- sp設定end ----------
+}
+// ---------- section設定end ----------
+
+// ---------- h2設定 ----------
+.section{
+  h2{
+    @extend %caveat !optional;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    color: #ffffff;
+    width: 80%;
+    background-color: v.$h2-color;
+    margin:auto;
+    padding:15px 0;
+    border-radius: 8px;
+    position: relative;
+
+    // ---------- sp設定 ----------
+    @include v.sp {
+      font-size: 12px;
+      padding:calc(15px / 2) 0;
+    }
+    // ---------- sp設定end ----------
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20%;
+      height: 15px;
+      background-color: v.$h2-color;
+      position: absolute;
+      top: calc(50% - 15px / 2);
+      left: -20%;
+
+      // ---------- sp設定 ----------
+      @include v.sp {
+      height:calc(15px / 2);
+      top: calc(50% - 15px / 2 / 2);
+      }
+      // ---------- sp設定end ----------
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 20%;
+      height: 15px;
+      background-color: v.$h2-color;
+      position: absolute;
+      top: calc(50% - 15px / 2);
+      right: -20%;
+
+      // ---------- sp設定 ----------
+      @include v.sp {
+        height:calc(15px / 2);
+        top: calc(50% - 15px / 2 / 2);
+      }
+      // ---------- sp設定end ----------
+    }
+  }
+}
+// ---------- h2設定end ----------

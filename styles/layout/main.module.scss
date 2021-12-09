@@ -1,0 +1,23 @@
+@use "variable.scss" as v;
+
+
+// -------------------------------
+// main幅
+// -------------------------------
+
+.main {
+  clear: both;
+  width: 1200px;
+  margin:160px auto 70px auto;
+  padding: 0 100px;
+  background-color: #ffffff; 
+
+  @include v.pc {
+    width: 100%;
+  }
+
+  @include v.sp {
+    width: 100%;
+    padding: 0 50px;
+  }
+}
