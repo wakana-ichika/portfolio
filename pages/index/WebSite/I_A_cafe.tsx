@@ -51,7 +51,7 @@ const I_A_cafe:NextPage = () => {
             Illustrator・PhotoShop・DreamWeaver・HTML/CSS・JavaScript・jQuery
           </p>
         </WebExplain>
-        <Button name="Webサイト" className="btn btn-g" href="http://my.internetacademy.jp/~a32007113/cafe02/index.html" />
+        <Button name="Webサイト" className="btn--g" href="http://my.internetacademy.jp/~a32007113/cafe02/index.html" />
       </div>
 
     </li>

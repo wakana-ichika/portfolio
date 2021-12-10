@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import style from "components.module.scss"
 
 
 
@@ -18,7 +19,7 @@ const Button: NextPage<props> = (props) => {
   }, [])
 
   return (
-    <div className={ props.className }>
+    <div className={`${style.btn} ${style[props.className]}`} >
       <Link  href={ props.href }>
         <a>{ name }</a>
       </Link>

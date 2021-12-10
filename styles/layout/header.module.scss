@@ -19,12 +19,12 @@
     top: 0;
     left: 0;
     transform: translate(0);
-    transition: all ease-in-out .4s;
+    transition: all .4s ease-in-out;
 
-      @include visual.pc {
+      @include visual.mq(pc) {
         transform: translate(-50%, 0);
       }
-      @include visual.sp {
+      @include visual.mq(sp) {
         transform: translate(-80%, 10%);
       }
   }
@@ -38,10 +38,10 @@
     transform: translate(0);
     transition: all ease-in-out .4s;
 
-    @include visual.pc {
+    @include visual.mq(pc) {
       transform: translate(50%, 0);
     }
-    @include visual.sp {
+    @include visual.mq(sp) {
       transform: translate(80%, 0);
     }
   }
@@ -76,7 +76,7 @@
     z-index: 11;
 
     // ---------- sp設定 ----------
-    @include visual.sp {
+    @include visual.mq(sp) {
       height: 100px;
     }
     // ---------- sp設定end ---------- 
@@ -96,7 +96,7 @@
     z-index: 12;
 
     // ---------- sp設定 ----------
-    @include visual.sp {
+    @include visual.mq(sp) {
       display: none;
     }
     // ---------- sp設定end ---------- 
@@ -116,9 +116,11 @@
     position: relative;
     z-index: 100;
 
-    @include visual.sp{
+    // ---------- sp設定 ----------
+    @include visual.mq(sp){
       width: 100%;
     }
+    // ---------- sp設定end ----------
   }
 }
 
@@ -130,12 +132,14 @@
 .header{
   h1 {
     float: left;
-    position: relative;
+    position: fixed;
     z-index: 9999;
 
-    @include visual.sp {
+    // ---------- sp設定 ----------
+    @include visual.mq(sp) {
       left: calc(50% - 70px);
     }
+    // ---------- sp設定end ----------
   }
 }
 
@@ -160,10 +164,12 @@ a {
       width:  calc(100% - 70px);
       float: right;
 
-      @include visual.sp {
+      // ---------- sp設定 ----------
+      @include visual.mq(sp) {
         width: 100%;
         float: none;
       }
+      // ---------- sp設定end ----------
     }
   } 
 }
@@ -204,10 +210,11 @@ a {
       background-color: nth(visual.$link-color, 2);
     }
     
-
-    @include visual.sp {
+    // ---------- sp設定 ----------
+    @include visual.mq(sp) {
       display: inline;
     }
+    // ---------- sp設定end ----------
   }
 }
 
@@ -221,6 +228,20 @@ a {
     
     &:checked ~ nav {
       transform: translate(0, 0);
+
+      li {
+        opacity: 1;
+        
+        &:nth-child(1) {
+          transition: opacity 1s ease 0.5s;
+        }
+        &:nth-child(2) {
+          transition: opacity 1s ease 0.8s;
+        }
+        &:nth-child(3) {
+          transition: opacity 1s ease 1.1s;
+        }
+      }
     }
   }
 }
@@ -230,19 +251,26 @@ a {
 // nav設定
 // -------------------------------
 
+// ---------- ナビゲーションの下敷き設定 ----------
 .nav {
   clear: both;
-  position: relative;
+  position: fixed;
   z-index: 9998;
-
-  @include visual.sp {
+  
+  // ---------- sp設定 ----------
+  @include visual.mq(sp) {
     width: 100%;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.8);
+    padding-top: 100px;
     transform: translate(0, -100vh);
-    transition: all ease-in-out .6s;
+    transition: transform .6s ease-in-out ;
   }
+  // ---------- sp設定end ----------
+}
 
+// ---------- ナビ並び方設定 ----------
+.nav {
   ul {
     display: flex;
     flex-direction: row;
@@ -250,11 +278,17 @@ a {
     justify-content: space-between;
     align-items: flex-end;
 
-    @include visual.sp {
+    // ---------- sp設定 ----------
+    @include visual.mq(sp) {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      li{
+        opacity: 0;
+      }
     }
+    // ---------- sp設定end ----------
   }
 }
 
@@ -267,12 +301,14 @@ a {
     color: nth(visual.$link-color, 1);
     padding: 20px;
     position: relative;
-    transition: all ease-in-out .4s;
+    transition: all 0.4s ease-in-out;
 
-    @include visual.sp {
+    // ---------- sp設定 ----------
+    @include visual.mq(sp) {
       width: 100%;
       padding: 50px;
     }
+    // ---------- sp設定end ----------
 
     &::before {
       content: "";
@@ -284,12 +320,14 @@ a {
       bottom: 0;
       left: 0;
       transform: scale(0, 0);
-      transition: all ease-in-out .4s;
+      transition: all .4s ease-in-out;
 
-      @include visual.sp {
+      // ---------- sp設定 ----------
+      @include visual.mq(sp) {
         background-color: nth(visual.$link-color, 2);
         transform: scale(1, 1);
       }
+      // ---------- sp設定end ----------
     }
 
     &:hover {

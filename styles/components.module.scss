@@ -13,7 +13,7 @@
   position: relative;
 
   // ---------- sp設定 ----------
-  @include v.sp {
+  @include v.mq(sp) {
     font-size: 12px;
     padding-top: calc(45px / 2);
   }
@@ -33,7 +33,7 @@
 
 
 // -------------------------------
-// section設定
+// Section設定
 // -------------------------------
 
 // ---------- section設定 ----------
@@ -42,7 +42,7 @@
   margin-top: 100px;
 
   // ---------- sp設定 ----------
-  @include v.sp {
+  @include v.mq(sp) {
     margin-top: 50px;
   }
   // ---------- sp設定end ----------
@@ -65,7 +65,7 @@
     position: relative;
 
     // ---------- sp設定 ----------
-    @include v.sp {
+    @include v.mq(sp) {
       font-size: 12px;
       padding:calc(15px / 2) 0;
     }
@@ -82,7 +82,7 @@
       left: -20%;
 
       // ---------- sp設定 ----------
-      @include v.sp {
+      @include v.mq(sp) {
       height:calc(15px / 2);
       top: calc(50% - 15px / 2 / 2);
       }
@@ -100,7 +100,7 @@
       right: -20%;
 
       // ---------- sp設定 ----------
-      @include v.sp {
+      @include v.mq(sp) {
         height:calc(15px / 2);
         top: calc(50% - 15px / 2 / 2);
       }
@@ -109,3 +109,36 @@
   }
 }
 // ---------- h2設定end ----------
+
+
+// -------------------------------
+// Button設定
+// -------------------------------
+
+// ---------- ボタン設定 ----------
+
+
+.btn {
+  a {
+    width: 200px;
+    height: 50px;
+    color: nth(v.$link-color, 1);
+    text-align: center;
+    padding-top: calc((50px - 1rem) / 2);
+    transition: all 0.3s ease-in-out;
+    
+  
+    &:hover {
+      transform: scale(0.8, 0.8);
+      opacity: 0.5;
+    }
+  }
+
+  &--g {
+    a {
+      background-color: v.$logo;
+      background: linear-gradient(90deg, v.$bg-color 40%, v.$logo);
+    }
+  }
+  
+}

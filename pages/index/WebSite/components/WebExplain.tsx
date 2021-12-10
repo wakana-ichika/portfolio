@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { ReactNode } from "react";
+import style from "index/website.module.scss"
 
 
 
@@ -15,7 +16,7 @@ type props = {
 
 const WebExplain: NextPage<props> = (props) => {
   return (
-    <div>
+    <div className={ style['web-explain'] }>
       <h4>{ props.title }</h4>
       {props.children}
     </div>

@@ -34,7 +34,7 @@ const I_A_chocolate:NextPage = () => {
   return (
     <li>
       
-      <WebImage src="/index/web02.jpg" alt="I.A.chocolate's photo" width={486} height={319} />
+      <WebImage src="/index/web02.jpg" alt="I.A.chocolate's photo" width={454} height={287} />
       
       <div>
         <WebTitleExplain title="I.A.chocolate">
@@ -42,10 +42,8 @@ const I_A_chocolate:NextPage = () => {
         </WebTitleExplain>
         <WebExplain title="配色イメージ">
           <p>
-            食欲を促進する赤橙系のdpトーンの茶色・路考茶・黒の配色で重厚な扉や家具を通りぬけ、
-            飾られたチョコレートを手に取る高級感をイメージしています。<br />
-            新商品や企画をトップに配置し、ピックアップをすぐ下に入れることで、
-            オススメがすぐにお客様の目に入るように意識しました。
+            食欲を促進する赤橙系のdpトーンの茶色・路考茶・黒の配色で高級感のある扉や家具を通りぬけ、
+            飾られたチョコレートをイメージしています。
           </p>
         </WebExplain>
         <WebExplain title="ツール・使用言語・ライブラリ・フレームワーク">
@@ -53,7 +51,7 @@ const I_A_chocolate:NextPage = () => {
             PhotoShop・VisualStudioCode・HTML/CSS・JavaScript・jQuery・Python・Django
           </p>
         </WebExplain>
-        <Button name="Webサイト" className="btn btn-g" href="https://kana-chocolate.herokuapp.com" />
+        <Button name="Webサイト" className="btn--g" href="https://kana-chocolate.herokuapp.com" />
       </div>
     </li>
   )

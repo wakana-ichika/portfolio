@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.scss'
 import Layout from './layout/Layout'
 import PageTitle from './components/pagetitle'
 import WebSite from './index/WebSite/WebSite'
+import Banner from './index/Banner'
 
 
 const Home: NextPage = () => {
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
     <Layout title="Kana's Portfolio| index" className="index">
       <PageTitle title="Kana's Portfolio" />
       <WebSite />
+      <Banner />
     </Layout>
   )
 

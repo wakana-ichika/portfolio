@@ -3,19 +3,15 @@
 // -------------------------------
 
 // ---------- mode ----------
-$pc: 1400px;
-$sp: 768px;
+$breakpoints:(
+  'pc': 1400px,
+  'sp': 768px
+);
 
 // ---------- media ----------
-@mixin pc {
-  @media screen and (max-width: $pc) {
+@mixin mq($size) {
+  @media screen and (max-width: #{map-get($breakpoints, $size)}) {
     @content;
-  }
-}
-
-@mixin sp {
-  @media screen and (max-width: $sp) {
-      @content;
   }
 }
 
@@ -28,5 +24,6 @@ $sp: 768px;
 $header-color: rgba(227, 247, 187, 0.8);
 $bg-color: #c9edc6;
 $h2-color: #829c6f;
+$p-color: #666666;
 $link-color: #000000, #34d6e6;
 $logo: #f5d888;

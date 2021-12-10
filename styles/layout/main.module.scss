@@ -12,11 +12,11 @@
   padding: 0 100px;
   background-color: #ffffff; 
 
-  @include v.pc {
+  @include v.mq(pc) {
     width: 100%;
   }
 
-  @include v.sp {
+  @include v.mq(sp) {
     width: 100%;
     padding: 0 50px;
   }

@@ -11,7 +11,7 @@
   text-align: center;
 
   // ---------- sp設定 ----------
-  @include v.sp {
+  @include v.mq(sp) {
     margin-top: 25px;
   }
 
@@ -30,23 +30,48 @@
 
 
 // -------------------------------
-// 全体設定/ WebSite
+// WebSite
 // -------------------------------
 
-
+// ---------- 写真と説明を横並びにする設定 ----------
 .website {
   & ul:last-of-type {
 
-    // ---------- 写真と説明を横並びにする設定 ----------
     li {
       display: flex;
       flex-direction: row;
       margin-top: 50px;
       padding-bottom: 50px;
-      // ---------- 写真と説明を横並びにする設定end ----------
 
-      div {
+      &:first-of-type {
+        margin-top: 100px;
+
+        // ---------- sp設定 ----------
+        @include v.mq(sp) {
+        margin-top: 50px;
+        }
+        // ---------- sp設定end ----------
+      }
+
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        margin-top: 25px;
+        padding-bottom: 25px;
+      }
+      // ---------- sp設定end ----------
+
+      & > div {
         width: 50%;
+
+        &:nth-child(2n) {
+          padding-left: 80px;
+          
+          // ---------- sp設定 ----------
+          @include v.mq(sp) {
+            padding-left: 40px;
+          }
+          // ---------- sp設定end ----------
+        }
       }
     }
   }
@@ -54,12 +79,101 @@
 
 
 // -------------------------------
-// web写真設定/ WebImage
+// WebImage
 // -------------------------------
 
 .web-image {
   text-align: right;
+  position: relative;
+  z-index: 2;
 }
+
+
+// -------------------------------
+// WebTitleExplain
+// -------------------------------
+
+// ---------- 模様設定 ----------
+.web-title-explain {
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+
+  // ---------- sp設定 ----------
+  @include v.mq(sp) {
+    margin-bottom: 20px;
+  }
+  // ---------- sp設定end ----------
+
+  &:before {
+    content: "";
+    display: block;
+    width: calc(100% + 200px);
+    height: 50px;
+    background-color: v.$bg-color;
+    opacity: 0.5;
+    position: absolute;
+    top: -25px;
+    left: -100px;
+
+    // ---------- sp設定 ----------
+    @include v.mq(sp) {
+      width: calc(100% + 100px);
+      height: 25px;
+      top: -12px;
+      left: -50px;
+    }
+    // ---------- sp設定end ----------
+  }  
+}
+
+// ---------- サイトタイトル設定 ----------
+.web-title-explain {
+  & h3 {
+    width: 100%;
+    font-size: 18px;
+    text-decoration: underline;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 5;
+
+    // ---------- sp設定 ----------
+    @include v.mq(sp) {
+      font-size: 9px;
+    }
+    // ---------- sp設定end ----------
+  }
+
+  p {
+    color: v.$p-color;
+  }
+}
+
+
+// -------------------------------
+// WebExplain
+// -------------------------------
+
+// ---------- サイト説明文字設定 ----------
+.web-explain {
+  margin-bottom: 45px;
+  line-height: 1.5rem;
+
+  p{
+    color: v.$p-color;
+  }
+
+  // ---------- sp設定 ----------
+  @include v.mq(sp) {
+    margin-bottom: calc(45px / 2);
+  }
+  // ---------- sp設定end ----------
+}
+
+
+
+
 
 // .container {
 //   min-height: 100vh;
