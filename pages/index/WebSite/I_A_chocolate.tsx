@@ -32,7 +32,7 @@ className => ベースはbtn　グラデボタンはbtn-g
 const I_A_chocolate:NextPage = () => {
 
   return (
-    <li>
+    <li data-groups='["All", "Django"]' className="item">
       
       <WebImage src="/index/web02.jpg" alt="I.A.chocolate's photo" width={454} height={287} />
       

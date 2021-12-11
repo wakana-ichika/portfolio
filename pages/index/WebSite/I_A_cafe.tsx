@@ -32,7 +32,7 @@ className => ベースはbtn　グラデボタンはbtn-g
 const I_A_cafe:NextPage = () => {
 
   return (
-    <li>
+    <li data-groups='["All", "Shop/Corp"]' className="item">
       
       <WebImage src="/index/web01.jpg" alt="I.A.cafe's photo" width={455} height={348} />
       <div>
