@@ -2,20 +2,14 @@
 
 
 // -------------------------------
-// ジャンル表記設定/ List
+// List( WebSite内にある )
 // -------------------------------
 
+// ---------- ジャンル表記の設定 ----------
 .list {
-  margin-top: 50px;
   width: 100%;
   text-align: center;
 
-  // ---------- sp設定 ----------
-  @include v.mq(sp) {
-    margin-top: 25px;
-  }
-
-  // ---------- sp設定end ----------
 
   li {
     display: inline-block;
@@ -33,15 +27,37 @@
 // WebSite
 // -------------------------------
 
+// ---------- 見出し下の余白設定 ----------
+.website {
+  h2 {
+    margin-bottom: 50px;
+
+    // ---------- sp設定/縦並び ----------
+    @include v.mq(sp) {
+      margin-bottom: 25px;
+    }
+    // ---------- sp設定end ----------
+  }
+}
+
 // ---------- 写真と説明を横並びにする設定 ----------
 .website {
   & ul:last-of-type {
 
     li {
       display: flex;
+      width: 100%;
       flex-direction: row;
       margin-top: 50px;
       padding-bottom: 50px;
+
+      // ---------- sp設定/縦並び ----------
+      @include v.mq(sp) {
+        flex-direction: column;
+        margin-top: 25px;
+        padding-bottom: 25px;
+      }
+      // ---------- sp設定end ----------
 
       &:first-of-type {
         margin-top: 100px;
@@ -53,22 +69,22 @@
         // ---------- sp設定end ----------
       }
 
-      // ---------- sp設定 ----------
-      @include v.mq(sp) {
-        margin-top: 25px;
-        padding-bottom: 25px;
-      }
-      // ---------- sp設定end ----------
-
       & > div {
         width: 50%;
+
+        // ---------- sp設定 ----------
+        @include v.mq(sp) {
+          width: 100%;
+        }
+       // ---------- sp設定end ----------
 
         &:nth-child(2n) {
           padding-left: 80px;
           
           // ---------- sp設定 ----------
           @include v.mq(sp) {
-            padding-left: 40px;
+            padding-left: 10px;
+            padding-top: 20px;
           }
           // ---------- sp設定end ----------
         }
@@ -86,6 +102,12 @@
   text-align: right;
   position: relative;
   z-index: 2;
+
+  // ---------- sp設定 ----------
+  @include v.mq(sp) {
+    text-align: center;
+  }
+  // ---------- sp設定end ----------
 }
 
 
@@ -108,7 +130,7 @@
   &:before {
     content: "";
     display: block;
-    width: calc(100% + 200px);
+    width: calc(100% + 100px);
     height: 50px;
     background-color: v.$bg-color;
     opacity: 0.5;
@@ -118,7 +140,6 @@
 
     // ---------- sp設定 ----------
     @include v.mq(sp) {
-      width: calc(100% + 100px);
       height: 25px;
       top: -12px;
       left: -50px;
@@ -172,7 +193,46 @@
 }
 
 
+// -------------------------------
+// Banner
+// -------------------------------
 
+// ---------- 並べ方設定 ----------
+.banner {
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+// ---------- 模様設定 ----------
+.banner {
+  ul {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      width: calc(100% + 200px);
+      height: 165px;
+      background-color: v.$bg-color;
+      opacity: 0.5;
+      position: absolute;
+      bottom: 0;
+      left: -100px;
+
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        width: calc(100% + 100px);
+        height: calc(165px / 2);
+        left: -50px;
+      }
+      // ---------- sp設定end ----------
+    }
+  }
+}
 
 
 // .container {

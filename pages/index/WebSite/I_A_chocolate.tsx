@@ -34,7 +34,7 @@ const I_A_chocolate:NextPage = () => {
   return (
     <li data-groups='["All", "Django"]' className="item">
       
-      <WebImage src="/index/web02.jpg" alt="I.A.chocolate's photo" width={454} height={287} />
+      <WebImage src="/index/web02.jpg" alt="I.A.chocolate's photo" width={455} height={287} />
       
       <div>
         <WebTitleExplain title="I.A.chocolate">

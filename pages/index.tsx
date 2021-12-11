@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.scss'
 import Layout from './layout/Layout'
 import PageTitle from './components/pagetitle'
 import WebSite from './index/WebSite/WebSite'
-import Banner from './index/Banner'
+import Banner from './index/Banner/Banner'
 
 
 const Home: NextPage = () => {
