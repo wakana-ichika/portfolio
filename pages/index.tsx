@@ -1,11 +1,10 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.scss'
 import Layout from './layout/Layout'
 import PageTitle from './components/pagetitle'
 import WebSite from './index/WebSite/WebSite'
-import Banner from './index/Banner/Banner'
+import Banner from './index/Banner'
+import Illust from './index/Illust'
+
 
 
 const Home: NextPage = () => {
@@ -15,6 +14,7 @@ const Home: NextPage = () => {
       <PageTitle title="Kana's Portfolio" />
       <WebSite />
       <Banner />
+      <Illust />
     </Layout>
   )
 

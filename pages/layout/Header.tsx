@@ -139,12 +139,12 @@ const Nav: NextPage = () => {
 
   useEffect(() => {
     // グローバルナビの内容
-    const navi_name: string[] = ['MySelf', 'Portfolio', 'Contact']
+    const navi_name: string[] = ['Portfolio', 'MySelf', 'Contact']
     const li: any[] = []
     
     // liに加工してnaviへ
-    navi_name.forEach((val, key) => {
-      if (val === 'MySelf'){
+    navi_name.map((val, key) => {
+      if (val === 'Portfolio'){
         li.push(<li key={key}><Link href="/">{ val }</Link></li>)
       }
       else {
