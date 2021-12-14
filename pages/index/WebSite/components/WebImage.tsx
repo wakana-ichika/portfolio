@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Image from "next/dist/client/image";
-import style from "index/website.module.scss"
+import style from "index.module.scss"
 
 
 type props = {

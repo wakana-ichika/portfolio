@@ -4,7 +4,7 @@ import { useRef, useEffect, useState, ReactNode, SyntheticEvent } from "react";
 import Shuffle from "shufflejs";
 import I_A_cafe from "./I_A_cafe";
 import I_A_chocolate from "./I_A_chocolate"
-import style from "index/website.module.scss"
+import style from "index.module.scss"
 
 
 
@@ -24,7 +24,7 @@ const WebSite: NextPage = () => {
   useEffect(() => {
     let box: ReactNode[] = [];
     kind_list.map((val, key) => {
-        box.push(<li onClick={ clickSelect } data-group={val} key={key}>{val}</li>)
+      box.push(<li onClick={ clickSelect } data-group={val} key={key}>{val}</li>)
     })
     setList(box)
     
@@ -42,12 +42,14 @@ const WebSite: NextPage = () => {
 
   // shuffleの設定
   const initShuffle = () => {
+    Shuffle.ALL_ITEMS = 'All';
     shuffleInstance = new Shuffle(element.current, {
       itemSelector: '.item',
       sizer: sizer.current,
+      group: 'All',
       speed: 300
     })
-    Shuffle.ALL_ITEMS = 'All';
+    
 
     return shuffleInstance
   }
@@ -55,6 +57,7 @@ const WebSite: NextPage = () => {
   // useEffectにshuffleをセット
   useEffect(() => {
     initShuffle()
+
   }, [])
 
   // 選択ジャンルをセット

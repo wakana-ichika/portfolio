@@ -145,10 +145,10 @@ const Nav: NextPage = () => {
     // liに加工してnaviへ
     navi_name.map((val, key) => {
       if (val === 'Portfolio'){
-        li.push(<li key={key}><Link href="/">{ val }</Link></li>)
+        li.push(<li key={ key }><Link href="/">{ val }</Link></li>)
       }
       else {
-        li.push(<li key={key}><Link href={'/' + val}>{ val }</Link></li>)
+        li.push(<li key={ key }><Link href={ val + '/' + val }>{ val }</Link></li>)
       }
     })
     setGnavi(li)
