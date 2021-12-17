@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import style from "kana.module.scss";
-import Image from "next/image";
 
 
 
