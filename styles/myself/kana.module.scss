@@ -1,0 +1,196 @@
+@use 'variable.scss' as v;
+
+
+
+// -------------------------------
+// Kana
+// -------------------------------
+
+// ---------- 黒猫と自己紹介並び方 ----------
+.kana {
+  width: 100%;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 1.5rem;
+
+  // ---------- sp設定 ----------
+  @include v.mq(sp) {
+    padding: 50px 0;
+  }
+  // ---------- sp設定end ----------
+  
+
+}
+
+// ---------- 黒猫の設定 ----------
+.kana {
+  & > div {
+    width: 50%;
+    text-align: right;
+    padding-right: 70px;
+    position: relative;
+    z-index: 5;
+
+    // ---------- sp設定 ----------
+    @include v.mq(sp) {
+      padding-right: 35px;
+    }
+    // ---------- sp設定end ----------
+
+    svg {
+
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        width: 100%;
+        height: auto;
+      // ---------- sp設定end ----------
+      }
+    }
+    .cls-1 {
+      fill: gray;
+    }
+  }
+}
+
+// ---------- 黒猫の背景設定 ----------
+.kana {
+  & > div {
+    &::before {
+      content: "";
+      display: block;
+      width: 400px;
+      height: 400px;
+      background-color: v.$bg-color;
+      border-radius: 50%;
+      position: absolute;
+      right: -90px;
+      top: 10%;
+      z-index: -1;
+
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        width: 200px;
+        height: 200px;
+        right: -45px;
+      }
+      // ---------- sp設定end ----------
+    } 
+  }
+}
+
+// ---------- 自己紹介全体設定 ----------
+.kana {
+  & > section {
+    width: 50%;
+    position: relative;
+    z-index: 5;
+  }
+}
+
+// ---------- 名前の設定 ----------
+.kana {
+  h2 {
+    @extend %caveat !optional;
+    width: 100%;
+    font-size: 36px;
+    padding: 10px 0;
+    transform: translate(-1rem, 0);
+    
+    // ---------- sp設定 ----------
+    @include v.mq(sp) {
+      font-size: 18px;
+      padding: 5px;
+    }
+    // ---------- sp設定end ----------
+  
+    // ---------- 名前の下飾り ----------
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: v.$logo;
+      position: absolute;
+      bottom: -10px;
+      left: 1rem;
+
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+          height: 1.5px;
+          bottom: -5px;
+      }
+      // ---------- sp設定end ----------
+    }
+  }
+}
+
+// ---------- section > div設定 ----------
+.kana {
+  section {
+    & > div {
+      margin-top: 35px;
+      padding-left: 30px;
+
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        margin-top: calc(35px / 2);
+        padding-left: 15px;
+      }
+      // ---------- sp設定end ----------
+    }
+  }
+}
+
+// ---------- section > div > p設定 ----------
+.kana {
+  section > div {
+    p:first-child {
+      padding-bottom: 40px;
+
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        padding-bottom: 20px;
+      }
+      // ---------- sp設定end ----------
+    }
+  }
+}
+
+// ---------- 趣味や好きなWeb設定 ----------
+
+.kana {
+  section > div {
+    div {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-bottom: 20px;
+      
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        margin-top: 10px;
+        padding-bottom: 10px;
+      }
+      // ---------- sp設定end ----------
+      
+
+      h3 {
+        width: 50%;
+        font-size: 1rem;
+      }
+
+      p {
+        color: v.$p-color;
+      }
+    }
+  }
+}
+
+
+
+
+

@@ -1,223 +1,61 @@
 @use 'variable.scss' as v;
 
-
-
-// -------------------------------
-// Kana
-// -------------------------------
-
-// ---------- 黒猫と自己紹介並び方 ----------
-.kana {
-  width: 100%;
-  padding-top: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  // ---------- sp設定 ----------
-  @include v.mq(sp) {
-    padding: 50px 0;
-  }
-  // ---------- sp設定end ----------
-  
-
-}
-
-// ---------- 黒猫の設定 ----------
-.kana {
-  & > div {
-    width: 50%;
-    text-align: right;
-    padding-right: 70px;
-    position: relative;
-    z-index: 5;
-
-    // ---------- sp設定 ----------
-    @include v.mq(sp) {
-      padding-right: 35px;
-    }
-    // ---------- sp設定end ----------
-
-    svg {
-
-      // ---------- sp設定 ----------
-      @include v.mq(sp) {
-        width: 100%;
-        height: auto;
-      // ---------- sp設定end ----------
-      }
-    }
-    .cls-1 {
-      fill: gray;
-    }
-  }
-}
-
-// ---------- 黒猫の背景設定 ----------
-.kana {
-  & > div {
-    &::before {
-      content: "";
-      display: block;
-      width: 400px;
-      height: 400px;
-      background-color: v.$bg-color;
-      border-radius: 50%;
-      position: absolute;
-      right: -90px;
-      top: 10%;
-      z-index: -1;
-
-      // ---------- sp設定 ----------
-      @include v.mq(sp) {
-        width: 200px;
-        height: 200px;
-        right: -45px;
-      }
-      // ---------- sp設定end ----------
-    } 
-  }
-}
-
-// ---------- 自己紹介全体設定 ----------
-.kana {
-  & > section {
-    width: 50%;
-    position: relative;
-    z-index: 5;
-  }
-}
-
-// ---------- 名前の設定 ----------
-.kana {
-  h2 {
-    @extend %caveat !optional;
-    width: 100%;
-    font-size: 36px;
-    padding: 10px 0;
-    transform: translate(-1rem, 0);
-    
-    // ---------- sp設定 ----------
-    @include v.mq(sp) {
-      font-size: 18px;
-      padding: 5px;
-    }
-    // ---------- sp設定end ----------
-  
-    // ---------- 名前の下飾り ----------
-    &::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 3px;
-      background-color: v.$logo;
-      position: absolute;
-      bottom: -10px;
-      left: 1rem;
-
-      // ---------- sp設定 ----------
-      @include v.mq(sp) {
-          height: 1.5px;
-          bottom: -5px;
-      }
-      // ---------- sp設定end ----------
-    }
-  }
-}
-
-// ---------- section > div設定 ----------
-.kana {
-  section {
-    & > div {
-      margin-top: 35px;
-      padding-left: 30px;
-
-      // ---------- sp設定 ----------
-      @include v.mq(sp) {
-        margin-top: calc(35px / 2);
-        padding-left: 15px;
-      }
-      // ---------- sp設定end ----------
-    }
-  }
-}
-
-// ---------- section > div > p設定 ----------
-.kana {
-  section > div {
-    p:first-child {
-      padding-bottom: 40px;
-
-      // ---------- sp設定 ----------
-      @include v.mq(sp) {
-        padding-bottom: 20px;
-      }
-      // ---------- sp設定end ----------
-    }
-  }
-}
-
-// ---------- 趣味や好きなWeb設定 ----------
-
-.kana {
-  section > div {
-    div {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: 20px;
-      padding-bottom: 20px;
-      
-      // ---------- sp設定 ----------
-      @include v.mq(sp) {
-        margin-top: 10px;
-        padding-bottom: 10px;
-      }
-      // ---------- sp設定end ----------
-      
-
-      h3 {
-        width: 50%;
-        font-size: 1rem;
-      }
-
-      p {
-        color: v.$p-color;
-      }
-    }
-  }
-}
-
-
-
 // -------------------------------
 // Skill
 // -------------------------------
 
-// ---------- 並び順設定 ----------
+
+// ---------- sectionの背景 ----------
 .skill {
   position: relative;
   top: -150px;
-
+  z-index: 1;
+    
   // ---------- sp設定 ----------
   @include v.mq(sp) {
     top: 0;
   }
   // ---------- sp設定end ----------
+    
+    
+  &::before {
+    content: "";
+    display: block;
+    width: calc(100% + 200px);
+    height: calc(100% + 200px);
+    background-color: v.$bg-color;
+    opacity: 0.5;
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    z-index: -1;
+    
+    // ---------- sp設定 ----------
+    @include v.mq(sp) {
+      width: calc(100% + 100px);
+      height: calc(100% + 100px);
+      top: -50px;
+      left: -50px;
+    }
+    // ---------- sp設定end ----------
+  }
+} 
 
+// ---------- 並び順 ----------
+.skill {
   table {
     width: 100%;
     border-collapse: collapse;
     line-height: 1rem;
-
+  
     th {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
       border-right:solid 15px v.$bg-color;
       padding: 25px 0;
-
+  
       // ---------- sp設定 ----------
       @include v.mq(sp) {
         border-right: solid calc(15px / 2) v.$bg-color;
@@ -225,14 +63,14 @@
       }
       // ---------- sp設定end ----------
     }
-
+  
     td {
       width: 50%;
       text-align: right;
     }
   }
 }
-
+ 
 // ---------- スキルアイコン設定 ----------
 .skill {
   tr {
@@ -246,7 +84,7 @@
         margin-right: 15px;
         font-size: 2rem;
         padding-top: calc((70px - 1rem) / 2);
-
+  
         // ---------- sp設定 ----------
         @include v.mq(sp) {
           width: 35px;
@@ -255,7 +93,7 @@
           padding-top: calc((35px - 1rem) / 2);
         }
         // ---------- sp設定end ----------
-
+  
         &:last-child {
           margin-right: 30px;
 
@@ -263,21 +101,19 @@
           @include v.mq(sp) {
             margin-right: 15px;
           }
-          // ---------- sp設定end ----------
+            // ---------- sp設定end ----------
         }
       }
     }
-
+  
     &:nth-of-type(2n) p {
       background-color: #bababa;
       color: #fff;
       font-size: 1.5rem;
-    }
-
-    
+    }    
   }
 }
-
+  
 // ---------- グラフ設定 ----------
 .graph {
   width: 100%;
@@ -287,14 +123,14 @@
   border-radius: 10px;
   margin-left: 30px;
   position: relative;
-
+  
   // ---------- sp設定 ----------
   @include v.mq(sp) {
     height: 25px;
   }
   // ---------- sp設定end ----------
 }
-
+  
 .skill{
   tr {
     .graph{
@@ -308,14 +144,14 @@
         position: absolute;
         top: 0;
         transition: all 0.7s ease;
-
+  
         // ---------- sp設定 ----------
         @include v.mq(sp) {
           height: 23px;
         }
         // ---------- sp設定end ----------
       }
-
+  
       &--active::before {
         content: "";
         display: block;
@@ -325,7 +161,7 @@
         border-radius: 10px;
         position: absolute;
         top: 0;
-
+  
         // ---------- sp設定 ----------
         @include v.mq(sp) {
           height: 23px;
@@ -333,7 +169,7 @@
         // ---------- sp設定end ---------- 
       }
     }
-
+  
     &:first-child {
       .graph{
         &::before {
@@ -346,14 +182,14 @@
           position: absolute;
           top: 0;
           transition: all 0.7s ease;
-
+  
           // ---------- sp設定 ----------
           @include v.mq(sp) {
             height: 23px;
           }
           // ---------- sp設定end ----------
         }
-
+  
         &--active::before {
           content: "";
           display: block;
@@ -363,20 +199,19 @@
           border-radius: 10px;
           position: absolute;
           top: 0;
-
+  
           // ---------- sp設定 ----------
           @include v.mq(sp) {
             height: 23px;
           }
-        // ---------- sp設定end ----------
+          // ---------- sp設定end ----------
         }
       }
     }
   }
-  
 }
-
-
+  
+  
 // ---------- できることリスト設定 ----------
 .skill {
   ul {
@@ -385,7 +220,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 60px;
-
+  
     li {
       background-color: #fff;
       border:solid 3px v.$bg-color;
@@ -402,7 +237,8 @@
     }
   }
 }
-
+  
+// ---------- リストの頭設定 ----------
 .skill {
   li {
     &:nth-of-type(1)::before {
@@ -420,7 +256,7 @@
       position: absolute;
       top: - calc(45px / 2);
       left: - calc(45px / 2);
-
+  
       // ---------- sp設定 ----------
       @include v.mq(sp) {
         width: calc(45px / 2);
@@ -432,7 +268,7 @@
       }
       // ---------- sp設定end ----------
     } 
-
+  
     &:nth-of-type(2)::before {
       content: "JS";
       display: block;
@@ -448,7 +284,7 @@
       position: absolute;
       top: - calc(45px / 2);
       left: - calc(45px / 2);
-
+  
       // ---------- sp設定 ----------
       @include v.mq(sp) {
         width: calc(45px / 2);
@@ -460,7 +296,7 @@
       }
       // ---------- sp設定end ----------
     }
-    
+      
     &:nth-of-type(3)::before {
       content: "Py";
       display: block;
@@ -476,7 +312,7 @@
       position: absolute;
       top: - calc(45px / 2);
       left: - calc(45px / 2);
-
+  
       // ---------- sp設定 ----------
       @include v.mq(sp) {
         width: calc(45px / 2);

@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { useEffect } from "react";
 import Section from "../components/section";
-import style from 'kana.module.scss'
+import style from 'myself/skill.module.scss'
 
 
 
@@ -19,7 +19,7 @@ const Skill: NextPage = () => {
       let options = {
           root: null,
           rootMargin: '-10% 0',
-          threshold: 0.1
+          threshold: 0
       }
 
       const classToggle = (entries: IntersectionObserverEntry[]) => {
@@ -43,7 +43,7 @@ const Skill: NextPage = () => {
   }, [])
 
   return (
-    <Section title="スキル" className={ style.skill } >
+    <Section title="Skill" className={ style.skill } >
       <table>
         <tbody>
           <tr>

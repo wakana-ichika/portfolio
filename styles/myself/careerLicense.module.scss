@@ -1,0 +1,232 @@
+@use 'variable.scss' as v;
+
+
+
+// -------------------------------
+// CareerLicense
+// -------------------------------
+
+// ---------- 全体設定 ----------
+.careerLicense {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  // ---------- sp設定 ----------
+  @include v.mq(sp) {
+    flex-direction: column;
+  }
+  // ---------- sp設定end ----------
+}
+
+// ---------- skill斜め背景分調整 ----------
+.career {
+  position: relative;
+  top: -100px;
+
+  // ---------- sp設定 ----------
+  @include v.mq(sp) {
+    top: 0;
+  }
+  // ---------- sp設定end ----------
+}
+
+.license {
+  position: relative;
+  top: -100px;
+
+  // ---------- sp設定 ----------
+  @include v.mq(sp) {
+    top: 0;
+    order: 1;
+  }
+  // ---------- sp設定end ----------
+}
+
+
+// -------------------------------
+// Career
+// -------------------------------
+
+.career {
+  text-align: right;
+
+  // ---------- sp設定 ----------
+  @include v.mq(sp) {
+    text-align: left;
+    padding-right: 0;
+    order: 2;
+  }
+  // ---------- sp設定end ----------
+
+  ul {
+    position: relative;
+    margin-right: 55px;
+    
+    // ---------- sp設定 ----------
+    @include v.mq(sp) {
+        left: 40px;
+    }
+    // ---------- sp設定end ----------
+
+    // ---------- 棒 ----------
+    &::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 10px;
+      background-color: v.$bg-color;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        width: 5px;
+        left: 0;
+      }
+      // ---------- sp設定end ----------
+    }
+
+    li {
+      position: relative;
+      margin:50px 0;
+      padding-right: 55px;
+      line-height: 1.5rem;
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        padding-left: 55px;
+      }
+      // ---------- sp設定end ----------
+
+      // ---------- 円 ----------
+      &::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: v.$bg-color;
+        position: absolute;
+        right: -15px;
+        top: calc((40px - 1rem) / -2);
+        z-index: 4;
+
+        // ---------- sp設定 ----------
+        @include v.mq(sp) {
+          width: 20px;
+          height: 20px;
+          left: -7.5px;
+          top: calc((20px - 1rem) / -2);
+        }
+        // ---------- sp設定end ----------
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        right: -10px;
+        top: calc((30px - 1rem) / -2);
+        z-index: 5;
+
+        // ---------- sp設定 ----------
+        @include v.mq(sp) {
+            width: 15px;
+            height: 15px;
+            left: -5px;
+            top: calc((15px - 1rem) / -2);
+        }
+        // ---------- sp設定end ----------
+      }
+
+      // ---------- 年 ----------
+      time {
+        margin-right: 1rem;
+      }
+
+      // ---------- 文字変え ----------
+      span {
+        color: v.$p-color;
+        display: block;
+      }
+    }
+  }
+}
+
+
+// -------------------------------
+// License
+// -------------------------------
+
+.license {
+  ul {
+    margin-left: 170px;
+
+    // ---------- sp設定 ----------
+    @include v.mq(sp) {
+      margin-left: 50px;
+    }
+    // ---------- sp設定end ----------
+
+    li {
+      position: relative;
+      margin: 50px 0;
+      color: v.$p-color;
+      line-height: 1.5rem;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      // ---------- ロゴ ----------
+      &:nth-of-type(1)::before {
+        content: url("/myself/colorist.svg");
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: -130px;
+
+        // ---------- sp設定 ----------
+        @include v.mq(sp) {
+          width: 50px;
+          height: 50px;
+          left: -65px;
+        }
+        // ---------- sp設定end ----------
+      }
+
+      &:nth-of-type(2)::before {
+        content: url("/myself/python.svg");
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: -130px;
+
+        // ---------- sp設定 ----------
+        @include v.mq(sp) {
+          width: 50px;
+          height: 50px;
+          left: -65px;
+        }
+        // ---------- sp設定end ----------
+      }
+
+      h3 {
+        font-size: 1rem;
+        color: #000;
+      }
+    }
+  }
+}

@@ -144,7 +144,7 @@
   &--g {
     a {
       background-color: v.$logo;
-      background: linear-gradient(90deg, v.$bg-color 40%, v.$logo);
+      background: linear-gradient(90deg, v.$bg-color 0%, rgba(232, 245, 136, 1) 65%, v.$logo 100%);
     }
   }
   
