@@ -48,6 +48,7 @@ const HeaderTop: NextPage<Props> = (props) => {
       <link rel="preconnect" href="https://fonts.googleapis.com" /> 
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="True" /> 
       <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+      <link rel="icon" href="/1logo.svg" />
     </Head>
   )
 }
@@ -134,21 +135,22 @@ const Logo: NextPage = () => {
 // nav設定 /Nav
 // -------------------------------
 
+// グローバルナビの内容
+const navi_name: string[] = ['Portfolio', 'MySelf', 'Contact']
+
 const Nav: NextPage = () => {
   const [gnavi, setGnavi] = useState<any[]>([])
 
   useEffect(() => {
-    // グローバルナビの内容
-    const navi_name: string[] = ['Portfolio', 'MySelf', 'Contact']
     const li: any[] = []
     
     // liに加工してnaviへ
     navi_name.map((val, key) => {
       if (val === 'Portfolio'){
-        li.push(<li key={ key }><Link href="/">{ val }</Link></li>)
+        li.push(<li key={ key }><Link href="/"><a>{ val }</a></Link></li>)
       }
       else {
-        li.push(<li key={ key }><Link href={ val + '/' + val }>{ val }</Link></li>)
+        li.push(<li key={ key }><Link href={ '/' + val + '/' + val }><a>{ val }</a></Link></li>)
       }
     })
     setGnavi(li)
