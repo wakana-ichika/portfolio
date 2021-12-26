@@ -157,14 +157,15 @@
         display: block;
         background-color: v.$bg-color;
         width: 75%;
-        height: 48px;
+        height: 38px;
         border-radius: 10px;
         position: absolute;
-        top: 0;
+        top: 5px;
+        left: 5px;
   
         // ---------- sp設定 ----------
         @include v.mq(sp) {
-          height: 23px;
+          height: 13px;
         }
         // ---------- sp設定end ---------- 
       }
@@ -195,14 +196,15 @@
           display: block;
           background-color: v.$bg-color;
           width: 85%;
-          height: 48px;
+          height: 38px;
           border-radius: 10px;
           position: absolute;
-          top: 0;
+          top: 5px;
+          left: 5px;
   
           // ---------- sp設定 ----------
           @include v.mq(sp) {
-            height: 23px;
+            height: 13px;
           }
           // ---------- sp設定end ----------
         }

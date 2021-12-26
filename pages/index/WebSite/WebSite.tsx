@@ -2,8 +2,8 @@ import Section from "../../components/section";
 import { NextPage } from "next";
 import { useRef, useEffect, useState, ReactNode, SyntheticEvent } from "react";
 import Shuffle from "shufflejs";
-import I_A_cafe from "./I_A_cafe";
-import I_A_chocolate from "./I_A_chocolate"
+import IACafe from "./IACafe";
+import IAChocolate from "./IAChocolate"
 import style from "index.module.scss"
 
 
@@ -76,8 +76,8 @@ const WebSite: NextPage = () => {
       </ul>
 
       <ul ref={ element } className="item-container">
-        <I_A_cafe />
-        <I_A_chocolate />
+        <IACafe />
+        <IAChocolate />
         <li ref={ sizer } className="sizer"></li>
       </ul>
     </Section>

@@ -113,7 +113,7 @@
 
 
 // -------------------------------
-// WebTitleExplain
+// WebTitleExplain + h3/サイト名 + 説明
 // -------------------------------
 
 // ---------- 模様設定 ----------
@@ -134,6 +134,7 @@
     width: calc(100% + 100px);
     height: 50px;
     background-color: v.$bg-color;
+    background-image: repeating-linear-gradient(-45deg, #fff, #fff 7px, transparent 0, transparent 14px);
     opacity: 0.5;
     position: absolute;
     top: -25px;
@@ -159,6 +160,10 @@
     margin-bottom: 0.5rem;
     position: relative;
     z-index: 5;
+
+    & a {
+      color: nth(v.$link-color, 1);
+    }
 
     // ---------- sp設定 ----------
     @include v.mq(sp) {
@@ -280,5 +285,188 @@
       }
       // ---------- sp設定end ----------
     }
+  }
+}
+
+
+// -------------------------------
+// WebDetail/末尾にDetailがついている
+// -------------------------------
+
+.detail {
+  & > div:nth-of-type(1) {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 100px;
+
+    // ---------- sp設定 ----------
+    @include v.mq(sp) {
+      margin-top: 50px;
+      padding-bottom: 50px;
+    }
+    // ---------- sp設定end ----------
+
+    & > div {
+      width: 50%;
+
+      &:nth-of-type(2) {
+        margin-left: 50px;
+        line-height: 1.5rem;
+
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        margin-left: 25px;
+      }
+      // ---------- sp設定end ----------
+
+
+        .web-title-explain {
+          &::before {
+            width: calc(100% + 200px);
+            left: -100px;
+
+          // ---------- sp設定 ----------
+          @include v.mq(sp) {
+            width: calc(100% + 100px);
+            left: -50px;
+          }
+          // ---------- sp設定end ----------
+          }
+        }
+      }
+    }
+  }
+}
+
+// ---------- 工夫 ----------
+.detail {
+  .kufu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin:1rem 0 0 75px;
+
+    // ---------- sp設定 ----------
+    @include v.mq(sp) {
+      flex-direction: column;
+      margin-left: 43.5px;
+    }
+    // ---------- sp設定end ----------
+
+    li{
+      width: 40%;
+      position: relative;
+      margin-bottom: 50px;
+
+      // ---------- sp設定 ----------
+      @include v.mq(sp) {
+        width: calc(100% - 65px / 2);
+        margin-bottom: 25px;
+      }
+      // ---------- sp設定end ----------
+
+      &:last-child, &:nth-last-of-type(2) {
+        margin-bottom: 0;
+
+        @include v.mq(sp) {
+          margin-bottom: 25px;
+        }
+      }
+
+      &:last-child {
+        @include v.mq(sp) {
+          margin-bottom: 0px;
+        }
+      }
+    
+      &::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        width: 65px;
+        height: 65px;
+        text-align: center;
+        padding-top: calc(23px / 2);
+        border: solid 5px v.$bg-color;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: -75px;
+
+        // ---------- sp設定 ----------
+        @include v.mq(sp) {
+          transform: scale(0.5) translateY(- calc(65px/2));
+          left: -63.5px;
+        }
+        // ---------- sp設定end ----------
+      }
+    }
+    
+    // ---------- I.A.cafe工夫 ----------
+    &--iaCafe {
+      li:first-child {
+        &::before {
+          content: url("/index/font.svg");
+        }
+      }
+
+      li:nth-of-type(2) {
+        &::before {
+          content: url("/index/contrast.svg");
+        }
+      }
+
+      li:nth-of-type(3) {
+        &::before {
+          content: url("/index/calendar.svg");
+        }
+      }
+
+      li:nth-of-type(4) {
+        &::before {
+          content: url("/index/image.svg");
+        }
+      }
+    }
+
+    // ---------- I.A.choco工夫 ----------
+    &--iaChoco {
+      li:first-child {
+        &::before {
+          content: url("/index/font.svg");
+        }
+      }
+
+      li:nth-of-type(2) {
+        &::before {
+          content: url("/index/search.svg");
+        }
+      }
+
+      li:nth-of-type(3) {
+        &::before {
+          content: url("/index/shuffle.svg");
+        }
+      }
+
+      li:nth-of-type(4) {
+        &::before {
+          content: url("/index/coin-yen.svg");
+        }
+      }
+    }
+  }
+}
+
+// ---------- 反省 ----------
+.detail {
+  .hansei {
+    list-style-type: square;
+    color: v.$p-color;
+    margin-left: 1.5rem;
   }
 }
