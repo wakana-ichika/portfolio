@@ -20,18 +20,7 @@ const WebSite: NextPage = () => {
   // リストと選択ジャンルを保存する場所
   const [list, setList] = useState<ReactNode[]>([])
   
-  // リストをセット
-  useEffect(() => {
-    let box: ReactNode[] = [];
-    kind_list.map((val, key) => {
-      box.push(<li onClick={ clickSelect } data-group={val} key={key}>{val}</li>)
-    })
-    setList(box)
-    
-  }, [])
   
-
-
   // shuffleに使う枠組みと一番下のエレメントをゲットする設定
   let element = useRef<any>(null)
   let sizer = useRef<any>(null)
@@ -54,11 +43,6 @@ const WebSite: NextPage = () => {
     return shuffleInstance
   }
 
-  // useEffectにshuffleをセット
-  useEffect(() => {
-    initShuffle()
-
-  }, [])
 
   // 選択ジャンルをセット
   const clickSelect = (e: SyntheticEvent) => {
@@ -67,6 +51,19 @@ const WebSite: NextPage = () => {
     shuffleInstance.filter(value)
   }
 
+
+  // リストをセット
+  useEffect(() => {
+    let box: ReactNode[] = [];
+    kind_list.map((val, key) => {
+      box.push(<li onClick={ clickSelect } data-group={val} key={key}>{val}</li>)
+    })
+    setList(box)
+
+    // shuffleをセット
+    initShuffle()
+    
+  }, [])
 
   return (
     <Section title="WebSite" className={ style.website }>

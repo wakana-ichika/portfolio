@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import style from 'index.module.scss'
 import Section from "../components/section";
-import Lightbox from "lightbox-react";
+import Lightbox from "react-image-lightbox";
 import 'react-image-lightbox/style.css'
 
 
@@ -30,7 +30,7 @@ const Illust: NextPage = () => {
     images.map((img, index) => {
       images_elements.push(
         <li key={ index } onClick={() => { setPhotoIndex( index ), setIsOpen(true) }}>
-          <Image src={ img } width={300} height={250} objectFit="cover" />
+          <Image src={ img } width={300} height={250} objectFit="cover" alt={ img } />
         </li>
       )
     })

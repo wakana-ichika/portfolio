@@ -12,16 +12,10 @@ type props = {
 }
 
 const Button: NextPage<props> = (props) => {
-  const [name, setName] = useState<string>('')
-
-  useEffect(() => {
-    setName(props.name)
-  }, [])
-
   return (
     <div className={`${style.btn} ${style[props.className]}`} >
       <Link  href={ props.href }>
-        <a>{ name }</a>
+        <a>{ props.name }</a>
       </Link>
     </div>
   )

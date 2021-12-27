@@ -30,9 +30,9 @@ const IACafe:NextPage = () => {
 
   return (
     <li data-groups='["All", "Shop/Corp"]' className="item">
-      <Link href="/index/WebSite/IACafeDetail">
+      
       <WebImage src="/index/web01.jpg" alt="I.A.cafe's photo" width={455} height={348} />
-      </Link>
+      
       <div>
           <div  className={ style['web-title-explain'] }>
             <h3>

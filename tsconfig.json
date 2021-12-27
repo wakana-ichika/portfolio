@@ -18,10 +18,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./styles",
-    "paths": {
-      "@variable": "variable.scss",
-    },
+    "baseUrl": "./styles"
   },
   "include": [
     "next-env.d.ts",

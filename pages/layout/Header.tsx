@@ -122,9 +122,11 @@ const Logo: NextPage = () => {
   return (
     <h1 title="Kana's Portfolio">
       <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 50 50">
-        <a href="/">
-          <path id="logo.svg" className={style.logo} d="M494,35V85h7V71l7-7,4,21h32V35H526V54h5V38h7V80H518l-7-25,9-20h-8L501,56V35h-7Zm9,37V85h6l-3-15Zm0-37V48l7-13h-7Zm21,0V56h8V40h4V78H519l-6-23Z" transform="translate(-494 -35)"/>
-        </a>
+        <Link href="/">
+          <a>
+            <path id="logo.svg" className={style.logo} d="M494,35V85h7V71l7-7,4,21h32V35H526V54h5V38h7V80H518l-7-25,9-20h-8L501,56V35h-7Zm9,37V85h6l-3-15Zm0-37V48l7-13h-7Zm21,0V56h8V40h4V78H519l-6-23Z" transform="translate(-494 -35)"/>
+          </a>
+        </Link>
       </svg>
     </h1>
   )

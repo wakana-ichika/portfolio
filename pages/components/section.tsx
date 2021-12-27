@@ -12,6 +12,10 @@ type props = {
   className: string
 }
 
+type propsH = {
+  title: string
+}
+
 
 // -------------------------------
 // Section設定
@@ -33,7 +37,7 @@ const Section: NextPage<props> = (props) => {
 // H2設定
 // -------------------------------
 
-const H2: NextPage<props> = (props) => {
+const H2: NextPage<propsH> = (props) => {
   return (
     <h2>{props.title}</h2>
   )
