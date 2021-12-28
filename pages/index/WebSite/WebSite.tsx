@@ -1,4 +1,4 @@
-import Section from "../../components/section";
+import Section from "../../../components/section";
 import { NextPage } from "next";
 import { useRef, useEffect, useState, ReactNode, SyntheticEvent } from "react";
 import Shuffle from "shufflejs";
@@ -20,50 +20,32 @@ const WebSite: NextPage = () => {
   // リストと選択ジャンルを保存する場所
   const [list, setList] = useState<ReactNode[]>([])
   
-  
-  // shuffleに使う枠組みと一番下のエレメントをゲットする設定
-  let element = useRef<any>(null)
-  let sizer = useRef<any>(null)
+  // リストをセット
+  useEffect(() => {
 
-
-  // shuffleのインスタンスを仮設定
-  let shuffleInstance: Shuffle;
-
-  // shuffleの設定
-  const initShuffle = () => {
-    Shuffle.ALL_ITEMS = 'All';
-    shuffleInstance = new Shuffle(element.current, {
+    let element: any = document.querySelector('.item-container')
+    let sizer: any = document.querySelector('.sizer')
+    let ShuffleInstance = new Shuffle(element, {
       itemSelector: '.item',
-      sizer: sizer.current,
+      sizer: sizer,
       group: 'All',
       speed: 300
     })
-    
+    Shuffle.ALL_ITEMS = 'All'
 
-    return shuffleInstance
-  }
+    const clickSelect = (e: SyntheticEvent) => {
+      const value: any = e.currentTarget.textContent
+        ShuffleInstance.filter(value)
+    }
 
-
-  // 選択ジャンルをセット
-  const clickSelect = (e: SyntheticEvent) => {
-    
-    const value: any = e.currentTarget.textContent
-    shuffleInstance.filter(value)
-  }
-
-
-  // リストをセット
-  useEffect(() => {
     let box: ReactNode[] = [];
     kind_list.map((val, key) => {
       box.push(<li onClick={ clickSelect } data-group={val} key={key}>{val}</li>)
     })
     setList(box)
 
-    // shuffleをセット
-    initShuffle()
-    
   }, [])
+
 
   return (
     <Section title="WebSite" className={ style.website }>
@@ -72,10 +54,10 @@ const WebSite: NextPage = () => {
         {list}
       </ul>
 
-      <ul ref={ element } className="item-container">
+      <ul className="item-container">
         <IACafe />
         <IAChocolate />
-        <li ref={ sizer } className="sizer"></li>
+        <li className="sizer"></li>
       </ul>
     </Section>
     )

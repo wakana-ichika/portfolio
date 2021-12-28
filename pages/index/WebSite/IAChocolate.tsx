@@ -2,7 +2,7 @@ import { NextPage } from "next"
 import Link from "next/link"
 import WebImage from "./components/WebImage"
 import WebExplain from "./components/WebExplain"
-import Button from "../../components/Button"
+import Button from "../../../components/Button"
 import style from "index.module.scss"
 
 

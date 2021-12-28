@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Layout from './layout/Layout'
-import PageTitle from './components/pagetitle'
+import PageTitle from '../components/pagetitle'
 import WebSite from './index/WebSite/WebSite'
 import Banner from './index/Banner'
 import Illust from './index/Illust'

@@ -47,11 +47,11 @@ const HeaderTop: NextPage<Props> = (props) => {
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2, user-scalable=yes" />
       <link rel="preconnect" href="https://fonts.googleapis.com" /> 
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="True" /> 
-      <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
       <link rel="icon" href="/1logo.svg" />
     </Head>
   )
 }
+//<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
 
 
 // -------------------------------
