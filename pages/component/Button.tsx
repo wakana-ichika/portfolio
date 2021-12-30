@@ -1,4 +1,4 @@
-//import { NextPage } from "next";
+import { NextPage } from "next";
 import Link from "next/link";
 import style from "components.module.scss"
 
@@ -10,7 +10,7 @@ type props = {
   className: string,
 }
 
-const Button = (props:props) => {
+const Button: NextPage<props> = (props) => {
   return (
     <div className={`${style.btn} ${style[props.className]}`} >
       <Link  href={ props.href }>
