@@ -1,4 +1,4 @@
-import Section from "../../components/section";
+import Section from "../../component/section";
 import { NextPage } from "next";
 import { useEffect, useState, ReactNode, SyntheticEvent } from "react";
 import Shuffle from "shufflejs";
