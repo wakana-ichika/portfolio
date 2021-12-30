@@ -1,6 +1,6 @@
-import Section from "../../../components/section";
+import Section from "../../components/section";
 import { NextPage } from "next";
-import { useRef, useEffect, useState, ReactNode, SyntheticEvent } from "react";
+import { useEffect, useState, ReactNode, SyntheticEvent } from "react";
 import Shuffle from "shufflejs";
 import IACafe from "./IACafe";
 import IAChocolate from "./IAChocolate"
